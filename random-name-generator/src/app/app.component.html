@@ -1,37 +1,43 @@
 <form class="main">
   <div class="content">
     <div class="left-side">
-      <h1>Hello!</h1>
-      <p>Feeling mischievous? Enter groups of people below and press the Submit button to be taken to our
-        'Random name generator'</p>
-      <p>In front of your friends, input the names again and watch as they're 'randomly generated' to the teams you
-        entered previously.</p>
 
-      <p>Please enter names as comma seperated values.</p>
+      <div *ngIf="!submitted">
+        <h1>Hello!</h1>
+        <p>Feeling mischievous? Enter groups of people below and press the Submit button to be taken to our
+          'Random name generator'</p>
+        <p>In front of your friends, input the names again and watch as they're 'randomly generated' to the teams you
+          entered previously.</p>
 
+        <p>Please enter names as comma seperated values.</p>
 
-      <div class="team-input-row">
-        <mat-form-field class="team-input">
-          <mat-label>{{ getNextTeamName() }}</mat-label>
-          <input matInput placeholder="James,Tiffany,Stacey" name="inputTeamMembers" [(ngModel)]="enteredTeamMembers">
-        </mat-form-field>
+        <div class="team-input-row">
+          <mat-form-field class="team-input">
+            <mat-label>{{ getNextTeamName() }}</mat-label>
+            <input matInput placeholder="James,Tiffany,Stacey" name="inputTeamMembers" [(ngModel)]="enteredTeamMembers">
+          </mat-form-field>
 
-        <button mat-stroked-button [disabled]="enteredTeamMembers === ''" (click)="addNewTeam($event)">
-          Add Team
-        </button>
-      </div>
-
-      <div class="submitted-teams">
-        <div class="team-card" *ngFor="let item of teams">
-          <h3>{{ item.teamName }}</h3>
-          <p>{{ item.members.join(', ') }}</p>
+          <button mat-stroked-button [disabled]="enteredTeamMembers === ''" (click)="addNewTeam($event)">
+            Add Team
+          </button>
         </div>
+
+        <div class="submitted-teams">
+          <div class="team-card" *ngFor="let item of teams">
+            <h3>{{ item.teamName }}</h3>
+            <p>{{ item.members.join(', ') }}</p>
+          </div>
+        </div>
+
+        <button mat-stroked-button [disabled]="teams.length === 0" (click)="submitted = true">Submit</button>
+
       </div>
 
-      <button mat-stroked-button [disabled]="teams.length === 0" (click)="addNewTeam($event)">Submit</button>
+      <div *ngIf="submitted">
+        <name-generator-component [teams]="teams"></name-generator-component>
+      </div>
 
     </div>
-
     <!-- <div class="divider" role="separator" aria-label="Divider"></div> -->
   </div>
 </form>
