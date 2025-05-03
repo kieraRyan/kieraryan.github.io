@@ -1,146 +1,178 @@
-  h1 {
-      font-size: 3.125rem;
-      color: var(--gray-900);
-      font-weight: 500;
-      line-height: 100%;
-      letter-spacing: -0.125rem;
-      margin: 0;
-      font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-          "Segoe UI Symbol";
-  }
+:host {
+    --bright-blue: oklch(51.01% 0.274 263.83);
+    --electric-violet: oklch(53.18% 0.28 296.97);
+    --french-violet: oklch(47.66% 0.246 305.88);
+    --vivid-pink: oklch(69.02% 0.277 332.77);
+    --hot-red: oklch(61.42% 0.238 15.34);
+    --orange-red: oklch(63.32% 0.24 31.68);
 
-  p {
-      margin: 0;
-      color: var(--gray-700);
-  }
+    --gray-900: oklch(19.37% 0.006 300.98);
+    --gray-700: oklch(36.98% 0.014 302.71);
+    --gray-400: oklch(70.9% 0.015 304.04);
 
-  main {
-      width: 100%;
-      min-height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-      box-sizing: inherit;
-      position: relative;
-  }
+    --red-to-pink-to-purple-vertical-gradient: linear-gradient(180deg,
+            var(--orange-red) 0%,
+            var(--vivid-pink) 50%,
+            var(--electric-violet) 100%);
 
-  .angular-logo {
-      max-width: 9.2rem;
-  }
+    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(90deg,
+            var(--orange-red) 0%,
+            var(--vivid-pink) 50%,
+            var(--electric-violet) 100%);
 
-  .content {
-      display: flex;
-      justify-content: space-around;
-      width: 100%;
-      /* max-width: 700px; */
-      margin-bottom: 3rem;
-  }
+    --pill-accent: var(--bright-blue);
 
-  .content h1 {
-      margin-top: 1.75rem;
-  }
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
-  .content p {
-      margin-top: 1.5rem;
-  }
+h1 {
+    font-size: 3.125rem;
+    color: var(--gray-900);
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.125rem;
+    margin: 0;
+    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+}
 
-  @media screen and (max-width: 650px) {
-      .content {
-          flex-direction: column;
-          width: max-content;
-      }
+p {
+    margin: 0;
+    color: var(--gray-700);
+}
 
-      .divider {
-          height: 1px;
-          width: 100%;
-          background: var(--red-to-pink-to-purple-horizontal-gradient);
-          margin-block: 1.5rem;
-      }
-  }
+main {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: inherit;
+    position: relative;
+}
 
-  mat-form-field {
-      width: 100%;
-      margin-top: 1.5rem;
-  }
+.angular-logo {
+    max-width: 9.2rem;
+}
 
-  .mat-mdc-form-field {
-      --mdc-outlined-text-field-outline-color: var(--gray-400);
-      --mdc-outlined-text-field-hover-outline-color: var(--bright-blue);
-      --mdc-outlined-text-field-focused-outline-color: var(--bright-blue);
-      --mdc-outlined-text-field-input-text-color: var(--gray-900);
-      --mdc-outlined-text-field-label-text-color: var(--gray-700);
-      --mdc-outlined-text-field-container-shape: 12px;
-  }
+.content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    /* max-width: 700px; */
+    margin-bottom: 3rem;
+}
 
-  .mat-mdc-form-field-infix {
-      padding: 0.75rem 0;
-  }
+.content h1 {
+    margin-top: 1.75rem;
+}
 
-  input.mat-input-element {
-      font-family: "Inter", sans-serif;
-      font-size: 1rem;
-      color: var(--gray-900);
-  }
+.content p {
+    margin-top: 1.5rem;
+}
 
-  /* Buttons */
-  button[mat-stroked-button] {
-      margin-top: 1.5rem;
-      padding: 0.5rem 1rem;
-      border-color: var(--bright-blue);
-      color: var(--bright-blue);
-      font-family: "Inter", sans-serif;
-      font-weight: 500;
-      border-radius: 9999px;
-      transition: background 0.3s ease, color 0.3s ease;
-  }
+@media screen and (max-width: 650px) {
+    .content {
+        flex-direction: column;
+        width: max-content;
+    }
 
-  button[mat-stroked-button]:hover:not(:disabled) {
-      background-color: color-mix(in srgb, var(--bright-blue) 10%, transparent);
-      cursor: pointer;
-  }
+    .divider {
+        height: 1px;
+        width: 100%;
+        background: var(--red-to-pink-to-purple-horizontal-gradient);
+        margin-block: 1.5rem;
+    }
+}
 
-  button[mat-stroked-button]:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-  }
+mat-form-field {
+    width: 100%;
+    margin-top: 1.5rem;
+}
 
-  .submitted-teams {
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-  }
+.mat-mdc-form-field {
+    --mdc-outlined-text-field-outline-color: var(--gray-400);
+    --mdc-outlined-text-field-hover-outline-color: var(--bright-blue);
+    --mdc-outlined-text-field-focused-outline-color: var(--bright-blue);
+    --mdc-outlined-text-field-input-text-color: var(--gray-900);
+    --mdc-outlined-text-field-label-text-color: var(--gray-700);
+    --mdc-outlined-text-field-container-shape: 12px;
+}
 
-  .team-card {
-      background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
-      border-left: 4px solid var(--pill-accent);
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  }
+.mat-mdc-form-field-infix {
+    padding: 0.75rem 0;
+}
 
-  .team-card h3 {
-      margin: 0 0 0.5rem 0;
-      font-size: 1.125rem;
-      color: var(--gray-900);
-  }
+input.mat-input-element {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    color: var(--gray-900);
+}
 
-  .team-card p {
-      margin: 0;
-      color: var(--gray-700);
-      font-size: 0.95rem;
-  }
+/* Buttons */
+button[mat-stroked-button] {
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-color: var(--bright-blue);
+    color: var(--bright-blue);
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    border-radius: 9999px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
 
-  .team-input-row {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      /* space between input and button */
-  }
+button[mat-stroked-button]:hover:not(:disabled) {
+    background-color: color-mix(in srgb, var(--bright-blue) 10%, transparent);
+    cursor: pointer;
+}
 
-  .team-input {
-      flex: 1;
-      /* makes the input field grow to fill available space */
-  }
+button[mat-stroked-button]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.submitted-teams {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.team-card {
+    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+    border-left: 4px solid var(--pill-accent);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.team-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.125rem;
+    color: var(--gray-900);
+}
+
+.team-card p {
+    margin: 0;
+    color: var(--gray-700);
+    font-size: 0.95rem;
+}
+
+.team-input-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* space between input and button */
+}
+
+.team-input {
+    flex: 1;
+    /* makes the input field grow to fill available space */
+}
