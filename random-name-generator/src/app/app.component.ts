@@ -5,10 +5,11 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import { Team } from './models/team';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatInputModule, MatFormFieldModule, FormsModule],
+  imports: [RouterOutlet, MatInputModule, MatFormFieldModule, FormsModule, NgFor],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -16,7 +17,6 @@ export class AppComponent {
   
   teams: Team[] = [];
   enteredTeamMembers: string = "";
-
 
   addNewTeam(event: any) : void {
     console.log(this.enteredTeamMembers);
@@ -30,4 +30,5 @@ export class AppComponent {
   getNextTeamName() : string {
     return `Team ${this.teams.length + 1}`;
   }
+
 }
