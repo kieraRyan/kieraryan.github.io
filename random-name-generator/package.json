@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-deployment": "ng build --output-path ../docs --base-href /random-name-generator/",
+    "build-deployment": "ng build --base-href /random-name-generator/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:random-name-generator": "node dist/random-name-generator/server/server.mjs"
