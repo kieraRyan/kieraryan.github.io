@@ -8,12 +8,12 @@ import { Team } from './models/team';
 import { NgFor, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'name-generator-component',
+  selector: 'team-generator-component',
   imports: [RouterOutlet, MatInputModule, MatFormFieldModule, FormsModule, NgFor, NgIf],
-  templateUrl: './name-generator.component.html',
+  templateUrl: './team-generator.component.html',
   styleUrl: './app.component.css',
 })
-export class NameGeneratorComponent {
+export class TeamGeneratorComponent {
   
   @Input() teams: Team[] = [];
 
