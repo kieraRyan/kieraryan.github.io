@@ -9,7 +9,7 @@
         <p>In front of your friends, input the names again and watch as they're 'randomly generated' to the teams you
           entered previously.</p>
 
-        <p>Please enter names as comma seperated values.</p>
+        <p>Please enter names seperated by commas.</p>
 
         <div class="team-input-row">
           <mat-form-field class="team-input">
@@ -29,14 +29,10 @@
           </div>
         </div>
 
-        <button mat-stroked-button [disabled]="teams.length === 0" (click)="submitted = true">
-            <a class="button" routerLink="/random-team-generator">Submit</a>
+        <button mat-stroked-button [disabled]="teams.length === 0" (click)="submitPage($event)">
+            Submit
         </button>
       </div>
-
-      <!-- <div *ngIf="submitted">
-        <team-generator-component [teams]="teams"></team-generator-component>
-      </div> -->
 
     </div>
   </div>

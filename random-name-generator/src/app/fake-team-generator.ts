@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -9,7 +9,7 @@ import { NgFor , NgIf} from '@angular/common';
 
 @Component({
   selector: 'fake-team-generator',
-  imports: [RouterOutlet, RouterLink, MatInputModule, MatFormFieldModule, FormsModule, NgFor, NgIf],
+  imports: [RouterOutlet, MatInputModule, MatFormFieldModule, FormsModule, NgFor, NgIf],
   templateUrl: './fake-team-generator.html',
   styleUrl: './app.component.css',
 })
@@ -18,6 +18,8 @@ export class FakeTeamGeneratorComponent {
   teams: Team[] = [];
   enteredTeamMembers: string = "";
   submitted: boolean = false;
+
+  constructor(private router: Router) {}
 
   addNewTeam(event: any) : void {
     this.teams.push({
@@ -29,6 +31,15 @@ export class FakeTeamGeneratorComponent {
   
   getNextTeamName() : string {
     return `Team ${this.teams.length + 1}`;
+  }
+
+  submitPage(event: any) : void {
+    // add to session storage
+    sessionStorage.setItem('inputTeams', JSON.stringify(this.teams));
+
+    this.router.navigate(['/random-team-generator'], {
+      state: { inputTeams: this.teams }
+    });    
   }
 
 }
