@@ -5,11 +5,11 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import { Team } from './models/team';
-import { NgFor , NgIf} from '@angular/common';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'fake-team-generator',
-  imports: [RouterOutlet, MatInputModule, MatFormFieldModule, FormsModule, NgFor, NgIf],
+  imports: [RouterOutlet, MatInputModule, MatFormFieldModule, FormsModule, NgFor],
   templateUrl: './fake-team-generator.html',
   styleUrl: './app.component.css',
 })
@@ -17,7 +17,6 @@ export class FakeTeamGeneratorComponent {
   
   teams: Team[] = [];
   enteredTeamMembers: string = "";
-  submitted: boolean = false;
 
   constructor(private router: Router) {}
 

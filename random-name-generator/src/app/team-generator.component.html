@@ -10,7 +10,7 @@
             <input matInput placeholder="James,Tiffany,Stacey" name="inputTeamMembers" [(ngModel)]="enteredTeamMembers">
         </mat-form-field>
   
-          <button mat-stroked-button [disabled]="enteredTeamMembers === ''" (click)="displayTeams = !displayTeams">
+          <button mat-stroked-button [disabled]="enteredTeamMembers === ''" (click)="displayRandomTeams($event)">
             Generate
           </button>
         </div>
@@ -25,9 +25,13 @@
             </mat-select>
           </mat-form-field>
         </div>
-  
-        <div class="submitted-teams" *ngIf="displayTeams">
-          <div class="team-card" *ngFor="let item of teams">
+
+        <div *ngIf="errorMessage" class="error-banner">
+          {{ errorMessage }}
+        </div>
+     
+        <div class="submitted-teams" *ngIf="teamsToDisplay.length !== 0">
+          <div class="team-card" *ngFor="let item of teamsToDisplay">
             <h3>{{ item.teamName }}</h3>
             <p>{{ item.members.join(', ') }}</p>
           </div>

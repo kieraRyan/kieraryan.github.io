@@ -179,3 +179,21 @@ button[mat-stroked-button]:disabled {
 .team-input {
     flex: 1;
 }
+
+.error-banner {
+    border: 2px solid var(--bright-blue);
+    color: var(--bright-blue);
+    padding: 0.5rem 1rem;
+    margin-top: 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    background-color: transparent;
+    font-family: "Inter", sans-serif;
+    transition: border 0.3s ease, color 0.3s ease;
+  }
