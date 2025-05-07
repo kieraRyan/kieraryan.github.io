@@ -17,7 +17,7 @@ import { NgFor, NgIf } from '@angular/common';
 })
 export class TeamGeneratorComponent {
   
-  @Input() teams: Team[] = [];
+  teams: Team[] = [];
 
   displayTeams: boolean = false;
   enteredTeamMembers: string = "";
