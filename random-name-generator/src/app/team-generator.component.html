@@ -3,7 +3,7 @@
       <div class="left-side">
         <h1>Hello!</h1>
         <p>Please enter a list of names below to sort them into random teams</p>    
-  
+      
         <div class="team-input-row">
           <mat-form-field class="team-input">
             <mat-label>Please enter names as comma seperated values.</mat-label>
@@ -13,6 +13,17 @@
           <button mat-stroked-button [disabled]="enteredTeamMembers === ''" (click)="displayTeams = !displayTeams">
             Generate
           </button>
+        </div>
+
+        <div class="team-input-row">
+          <mat-form-field>
+            <mat-label>Number of Teams</mat-label>
+            <mat-select [(value)] = "selectedTeamNum" (selectionChange)="onTeamNumberChange($event)">
+              @for (num of teamNumOptions; track num) {
+                <mat-option [value]="num">{{num}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
         </div>
   
         <div class="submitted-teams" *ngIf="displayTeams">

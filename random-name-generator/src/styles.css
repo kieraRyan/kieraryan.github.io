@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles that apply everywhere — including to Angular Material’s overlay elements (which live outside each component) eg .mat-select-panel, .mat-option, tooltips, and dialogs */
+
+.mat-mdc-select-panel {
+    background-color: rgba(255, 255, 255, 1) !important;
+    z-index: 1000 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    font-family: "Inter", sans-serif;
+}
+
+.mat-mdc-option {
+    background-color: rgba(255, 255, 255, 1) !important;
+    color: black !important;
+    font-family: "Inter", sans-serif;
+}
