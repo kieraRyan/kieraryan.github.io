@@ -9,10 +9,6 @@
             <mat-label>Please enter names seperated by commas.</mat-label>
             <input matInput placeholder="James,Tiffany,Stacey" name="inputTeamMembers" [(ngModel)]="enteredTeamMembers">
         </mat-form-field>
-  
-          <button mat-stroked-button [disabled]="enteredTeamMembers === ''" (click)="displayRandomTeams($event)">
-            Generate
-          </button>
         </div>
 
         <div class="team-input-row">
@@ -24,6 +20,11 @@
               }
             </mat-select>
           </mat-form-field>
+
+          <button mat-stroked-button [disabled]="enteredTeamMembers === ''" (click)="displayRandomTeams($event)">
+            Generate
+          </button>
+          
         </div>
 
         <div *ngIf="errorMessage" class="error-banner">
