@@ -87,7 +87,7 @@ main {
     .team-input-row {
         flex-direction: column;
         align-items: stretch;
-      }
+    }
 
     .divider {
         height: 1px;
@@ -174,10 +174,8 @@ button[mat-stroked-button]:disabled {
     display: flex;
     align-items: center;
     gap: 1rem;
-    /* space between input and button */
 }
 
 .team-input {
     flex: 1;
-    /* makes the input field grow to fill available space */
 }
